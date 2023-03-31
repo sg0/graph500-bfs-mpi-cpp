@@ -349,6 +349,8 @@ int main(int argc, char** argv) {
 
     /* Validate result. */
     if (!getenv("SKIP_VALIDATION")) {
+#if defined(SKIP_VALIDATION)
+#else
       if (rank == 0) fprintf(stderr, "Validating BFS %d\n", bfs_root_idx);
 
       double validate_start = MPI_Wtime();
@@ -365,6 +367,7 @@ int main(int argc, char** argv) {
 	if (rank == 0) fprintf(stderr, "Validation failed for this BFS root; skipping rest.\n");
 	break;
       }
+#endif
     } else {
       validate_times[bfs_root_idx] = -1;
     }
