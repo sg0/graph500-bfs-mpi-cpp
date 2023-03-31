@@ -1,4 +1,4 @@
-CXXFLAGS = -fopenmp -g -Wall -Drestrict=__restrict__ -O3 -DNDEBUG -ffast-math -DEMULATE_ONE_SIDED -DGRAPH_GENERATOR_MPI # -g -pg
+CXXFLAGS = -fopenmp -g -Wall -Drestrict=__restrict__ -O3 -DNDEBUG -DSKIP_VALIDATION -ffast-math -DEMULATE_ONE_SIDED -DGRAPH_GENERATOR_MPI # -g -pg
 LDFLAGS = -fopenmp -g # -g -pg
 MPICXX = mpicxx
 
